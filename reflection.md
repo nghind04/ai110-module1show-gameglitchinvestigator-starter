@@ -5,6 +5,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
+The game ran, but the "New Game" and "Submit Guess" buttons were broken after a finished game. The difficulty level also doesn't match with the the description on the game. When choosing the difficulty level of "Normal", the allowed attempts should be 8, but only 7 attempts were shown on the main page of the game
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
 
@@ -14,9 +15,9 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+|Guess of 30|Print out "Go LOWER!" | Print out "Go HIGHER!" | None|
+| Clicked on the "New Game" button after a game finished | New game starts | Nothing happenned | None|
+|Guess of 20|Hint: "Go HIGHER!" since the secret is 69 | Hint: "Go LOWER!" | None |
 
 ---
 
