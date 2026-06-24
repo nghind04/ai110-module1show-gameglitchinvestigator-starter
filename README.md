@@ -25,21 +25,23 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- The game's purpose: a secret number guessing game, in which users need to guess the correct number using the hints under a specific number of attempts for each level. 
+- Bugs I found in the game: 
+   * Incorrect High/Low Hint: the game returns Hint of "Go HIGHER" when user guessed a number larger than the secret, and "Go LOWER" when the guess was smaller than the secret. 
+   * Unmatching display and incorrect secret generation based on difficulty level: when user selected different difficulty level, the secret number and the guessing range remained unchanged while the number of attempts changed. 
+- Fixes in the game: 
+   * The game gave correct High/Low hints for eah guess by fixing the game logic and moving `parse_guess` and `check_guess` functions to `logic_utils.py`
+   * Correct secret number is generated and correct range is displayed accordingly to each difficulty level
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
-
-**Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
+1. User selects level "Normal"
+2. Game displays "Guess a number between 1 and 100. Attempts left: 7". The secret number is 66
+3. User enters 10 -> Game returns "Go HIGHER"
+4. User enters 80 -> Game returns "Go LOWER"
+5. Game ends after the correct guess and displays the score
 
 ## 🧪 Test Results
 
@@ -47,6 +49,15 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 # Paste your pytest output here, e.g.:
 # pytest tests/
 # ========================= X passed in 0.XXs =========================
+```
+
+```
+collected 9 items                                                                                                                                            
+
+tests/test_difficulty_range.py ....                                                                                                                    [ 44%]
+tests/test_game_logic.py .....                                                                                                                         [100%]
+
+===================================================================== 9 passed in 0.60s ======================================================================
 ```
 
 ## 🚀 Stretch Features
